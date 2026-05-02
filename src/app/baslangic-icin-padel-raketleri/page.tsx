@@ -146,14 +146,30 @@ export default function BaslangicPadelRaketleriPage() {
 
         <FAQSection faqs={faqs} title="Başlangıç Padel Raketi SSS" />
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <Link href="/en-iyi-padel-raketleri" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
             <h3 className="font-bold text-gray-900 group-hover:text-green-700">🏆 En İyi Raketler</h3>
             <p className="text-sm text-gray-500">Tüm seviyelerin en iyileri</p>
           </Link>
+          <Link href="/padel-raket-fiyatlari" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
+            <h3 className="font-bold text-gray-900 group-hover:text-green-700">💰 Fiyat Karşılaştırması</h3>
+            <p className="text-sm text-gray-500">En uygun fiyatı bulun</p>
+          </Link>
           <Link href="/blog/padel-raketi-nasil-secilir" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
             <h3 className="font-bold text-gray-900 group-hover:text-green-700">📖 Raket Seçim Rehberi</h3>
             <p className="text-sm text-gray-500">Detaylı seçim kriterleri</p>
+          </Link>
+          <Link href="/padel-raket-karsilastirma" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
+            <h3 className="font-bold text-gray-900 group-hover:text-green-700">⚖️ Model Karşılaştırması</h3>
+            <p className="text-sm text-gray-500">Raketleri yan yana kıyaslayın</p>
+          </Link>
+          <Link href="/padel-raket-markalari" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
+            <h3 className="font-bold text-gray-900 group-hover:text-green-700">🎯 Markalar Rehberi</h3>
+            <p className="text-sm text-gray-500">Wilson, Adidas, Nox karşılaştırması</p>
+          </Link>
+          <Link href="/padel-raket-nedir" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
+            <h3 className="font-bold text-gray-900 group-hover:text-green-700">❓ Padel Raketi Nedir?</h3>
+            <p className="text-sm text-gray-500">Temel bilgiler ve özellikler</p>
           </Link>
         </div>
       </div>

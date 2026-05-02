@@ -4,8 +4,8 @@ const navLinks = [
   { href: '/padel-raketleri', label: 'Raketler' },
   { href: '/en-iyi-padel-raketleri', label: 'En İyiler' },
   { href: '/padel-raket-fiyatlari', label: 'Fiyatlar' },
+  { href: '/padel-raket-karsilastirma', label: 'Karşılaştır' },
   { href: '/blog', label: 'Blog' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
 ];
 
 export default function Header() {

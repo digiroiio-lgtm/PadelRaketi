@@ -7,6 +7,11 @@ const footerLinks = {
     { href: '/en-iyi-padel-raketleri', label: 'En İyi Padel Raketleri' },
     { href: '/padel-raket-fiyatlari', label: 'Fiyat Karşılaştırma' },
     { href: '/baslangic-icin-padel-raketleri', label: 'Başlangıç Raketleri' },
+    { href: '/padel-raket-karsilastirma', label: 'Raket Karşılaştırması' },
+    { href: '/padel-raket-markalari', label: 'Markalar Rehberi' },
+    { href: '/ucuz-padel-raket', label: 'Ucuz Padel Raket' },
+    { href: '/padel-raket-rehberi', label: 'Raket Alım Rehberi' },
+    { href: '/padel-raket-nedir', label: 'Padel Raketi Nedir?' },
   ],
   Blog: [
     { href: '/blog', label: 'Blog Ana Sayfa' },

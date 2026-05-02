@@ -38,6 +38,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/padel-raket-karsilastirma`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/padel-raket-markalari`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ucuz-padel-raket`,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 0.87,
+    },
+    {
+      url: `${baseUrl}/padel-raket-rehberi`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.83,
+    },
+    {
+      url: `${baseUrl}/padel-raket-nedir`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: now,
       changeFrequency: 'daily',
