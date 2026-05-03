@@ -12,6 +12,7 @@ const footerLinks = {
     { href: '/ucuz-padel-raket', label: 'Ucuz Padel Raket' },
     { href: '/padel-raket-rehberi', label: 'Raket Alım Rehberi' },
     { href: '/padel-raket-nedir', label: 'Padel Raketi Nedir?' },
+    { href: '/yenilenmis-padel-raketleri', label: '♻️ Yenilenmiş Raketler' },
   ],
   Blog: [
     { href: '/blog', label: 'Blog Ana Sayfa' },

@@ -22,6 +22,9 @@ export const products: Product[] = [
     level: 'İleri',
     availability: 'InStock',
     badge: 'En Çok Satan',
+    playStyle: 'Dengeli',
+    isOnSale: true,
+    isBestSeller: true,
     description:
       'Wilson Blade V3, ileri seviye oyuncular için tasarlanmış premium bir padel raketidir. Karbon fiber yapısı ve elmas şekli sayesinde maksimum güç ve kontrol sunar.',
     pros: [
@@ -63,6 +66,8 @@ export const products: Product[] = [
     level: 'Profesyonel',
     availability: 'InStock',
     badge: 'Editörün Seçimi',
+    playStyle: 'Güç',
+    isOnSale: true,
     description:
       'Adidas Metalbone 3.3, dünya sıralamasındaki profesyonellerin tercih ettiği amiral gemisi rakettir. 12K karbon fiber yüzeyi ile rakipsiz performans sunar.',
     pros: [
@@ -100,8 +105,11 @@ export const products: Product[] = [
     shape: 'Yuvarlak',
     level: 'Orta',
     availability: 'InStock',
+    playStyle: 'Kontrol',
+    isOnSale: true,
+    isBestSeller: true,
     description:
-      'Nox ML10 Pro Cup, orta seviye oyuncular için ideal denge noktasını sunan popüler bir rakettir. Miguel Lamperti\'nin imzasını taşıyan bu raket, geniş tatlı noktası ile affedici oyun sağlar.',
+      "Nox ML10 Pro Cup, orta seviye oyuncular için ideal denge noktasını sunan popüler bir rakettir. Miguel Lamperti'nin imzasını taşıyan bu raket, geniş tatlı noktası ile affedici oyun sağlar.",
     pros: [
       'Geniş tatlı nokta',
       'Uygun fiyat',
@@ -141,6 +149,8 @@ export const products: Product[] = [
     level: 'Başlangıç',
     availability: 'InStock',
     badge: 'Başlangıç İçin İdeal',
+    playStyle: 'Kontrol',
+    isOnSale: true,
     description:
       'Head Zephyr, padle sporuna yeni başlayanlar için mükemmel bir başlangıç raketidir. Hafif yapısı ve yuvarlak şekli ile kolay kontrol sağlar.',
     pros: [
@@ -178,6 +188,8 @@ export const products: Product[] = [
     shape: 'Elmas',
     level: 'İleri',
     availability: 'InStock',
+    playStyle: 'Güç',
+    isOnSale: true,
     description:
       'Bullpadel Vertex 04, saldırgan oyun stiline sahip ileri seviye oyuncular için tasarlanmıştır. Yüksek dengesi ve karbon yapısı ile güçlü vuruşlar için optimize edilmiştir.',
     pros: [
@@ -214,6 +226,8 @@ export const products: Product[] = [
     shape: 'Damla',
     level: 'Orta',
     availability: 'InStock',
+    playStyle: 'Dengeli',
+    isOnSale: true,
     description:
       'Babolat Air Viper, orta seviye oyuncular için güç ve konfor dengesini mükemmel şekilde sunan bir rakettir. Damla şekli her iki özelliği de iyi düzeyde sağlar.',
     pros: ['İyi güç-kontrol dengesi', 'Konforlu tutuş', 'Uygun fiyat'],
@@ -228,6 +242,175 @@ export const products: Product[] = [
       Seviye: 'Orta',
     },
     affiliateUrl: 'https://www.amazon.com.tr/s?k=babolat+air+viper+padel',
+  },
+  // ── Yenilenmiş Raketler ──────────────────────────────────────────────────
+  {
+    id: 'r1',
+    slug: 'nox-ml10-yenilenmis-padel-raketi',
+    name: 'Nox ML10 Pro Cup (Yenilenmiş)',
+    brand: 'Nox',
+    price: 1150,
+    oldPrice: 2500,
+    rating: 4.3,
+    reviewCount: 48,
+    image: '/images/products/nox-ml10.jpg',
+    images: ['/images/products/nox-ml10.jpg'],
+    weight: '370g',
+    balance: 'Orta',
+    material: 'Fiberglas',
+    shape: 'Yuvarlak',
+    level: 'Orta',
+    availability: 'InStock',
+    badge: 'Yenilenmiş',
+    playStyle: 'Kontrol',
+    isRefurbished: true,
+    isOnSale: true,
+    description:
+      'Nox ML10 Pro Cup yenilenmiş versiyonu. Profesyonel ekibimiz tarafından kontrol edilmiş, grip yenilenmiş ve performans testinden geçirilmiştir. Orijinal performansını korumaktadır.',
+    pros: [
+      'Çok uygun fiyat',
+      'Test edilmiş performans',
+      'Grip yenilenmiş',
+      'Yüksek fiyat-performans',
+    ],
+    cons: ['Kozmetik izler olabilir', 'Garanti süresi sınırlı (6 ay)'],
+    specs: {
+      Ağırlık: '370g',
+      Denge: 'Orta (255mm)',
+      Uzunluk: '455mm',
+      Genişlik: '270mm',
+      Malzeme: 'Fiberglas + Eva Köpük',
+      Şekil: 'Yuvarlak',
+      Seviye: 'Orta',
+      Durum: 'Yenilenmiş – A Sınıfı',
+    },
+    affiliateUrl: 'https://www.amazon.com.tr/s?k=nox+ml10+padel+yenilenmi%C5%9F',
+  },
+  {
+    id: 'r2',
+    slug: 'wilson-blade-v2-yenilenmis-padel-raketi',
+    name: 'Wilson Blade V2 (Yenilenmiş)',
+    brand: 'Wilson',
+    price: 1650,
+    oldPrice: 2999,
+    rating: 4.4,
+    reviewCount: 31,
+    image: '/images/products/wilson-blade-v3.jpg',
+    images: ['/images/products/wilson-blade-v3.jpg'],
+    weight: '365g',
+    balance: 'Orta',
+    material: 'Karbon Fiber',
+    shape: 'Elmas',
+    level: 'İleri',
+    availability: 'InStock',
+    badge: 'Yenilenmiş',
+    playStyle: 'Dengeli',
+    isRefurbished: true,
+    isOnSale: true,
+    description:
+      'Wilson Blade V2 yenilenmiş versiyonu. Karbon fiber gövdesi ve elmas şekliyle ileri seviye oyuncular için uygun fiyatlı bir seçenek sunar. Kapsamlı performans testinden geçirilmiştir.',
+    pros: [
+      'Premium karbon fiber teknolojisi',
+      'Orijinalin %55 fiyatına',
+      'Performans garantili',
+      'İleri seviye için uygun fiyat',
+    ],
+    cons: ['V3\'e kıyasla eski nesil', 'Kozmetik aşınma izleri olabilir'],
+    specs: {
+      Ağırlık: '365g',
+      Denge: 'Orta (260mm)',
+      Uzunluk: '455mm',
+      Genişlik: '270mm',
+      Malzeme: 'Karbon Fiber + Eva Köpük',
+      Şekil: 'Elmas',
+      Seviye: 'İleri',
+      Durum: 'Yenilenmiş – A Sınıfı',
+    },
+    affiliateUrl: 'https://www.amazon.com.tr/s?k=wilson+blade+padel+yenilenmi%C5%9F',
+  },
+  {
+    id: 'r3',
+    slug: 'head-delta-pro-yenilenmis-padel-raketi',
+    name: 'Head Delta Pro (Yenilenmiş)',
+    brand: 'Head',
+    price: 1200,
+    oldPrice: 2100,
+    rating: 4.2,
+    reviewCount: 27,
+    image: '/images/products/head-zephyr.jpg',
+    images: ['/images/products/head-zephyr.jpg'],
+    weight: '360g',
+    balance: 'Orta',
+    material: 'Fiberglas',
+    shape: 'Damla',
+    level: 'Orta',
+    availability: 'InStock',
+    badge: 'Yenilenmiş',
+    playStyle: 'Dengeli',
+    isRefurbished: true,
+    isOnSale: true,
+    description:
+      'Head Delta Pro yenilenmiş versiyonu. Damla şekli ve fiberglas yüzeyi ile orta seviye oyuncuların güç-kontrol dengesini aradığı bir raket. Tüm bileşenleri kontrol edilmiş ve gerekli parçalar yenilenmiştir.',
+    pros: [
+      'Head marka kalitesi uygun fiyata',
+      'Damla şekil — iyi güç-kontrol dengesi',
+      'Kapsamlı kontrol yapılmış',
+      'B sınıfı kozmetik, A sınıfı performans',
+    ],
+    cons: ['Kozmetik izler olabilir', '6 ay garanti'],
+    specs: {
+      Ağırlık: '360g',
+      Denge: 'Orta (258mm)',
+      Uzunluk: '455mm',
+      Genişlik: '270mm',
+      Malzeme: 'Fiberglas + Foam',
+      Şekil: 'Damla',
+      Seviye: 'Orta',
+      Durum: 'Yenilenmiş – B Sınıfı',
+    },
+    affiliateUrl: 'https://www.amazon.com.tr/s?k=head+delta+padel+yenilenmi%C5%9F',
+  },
+  {
+    id: 'r4',
+    slug: 'adidas-adipower-3-1-yenilenmis-padel-raketi',
+    name: 'Adidas Adipower Light 3.1 (Yenilenmiş)',
+    brand: 'Adidas',
+    price: 1850,
+    oldPrice: 3400,
+    rating: 4.5,
+    reviewCount: 19,
+    image: '/images/products/adidas-metalbone.jpg',
+    images: ['/images/products/adidas-metalbone.jpg'],
+    weight: '355g',
+    balance: 'Orta',
+    material: 'Karbon Fiber',
+    shape: 'Yuvarlak',
+    level: 'Orta',
+    availability: 'InStock',
+    badge: 'Yenilenmiş',
+    playStyle: 'Kontrol',
+    isRefurbished: true,
+    isOnSale: true,
+    description:
+      'Adidas Adipower Light 3.1 yenilenmiş versiyonu. Karbon fiber yüzey ve yuvarlak şekliyle kontrol odaklı orta seviye oyuncular için mükemmel bir seçenek. Adidas kalitesini uygun bütçeyle deneyimleyin.',
+    pros: [
+      'Adidas karbon fiber teknolojisi',
+      'Orijinalin %45 fiyatına',
+      'Kontrol odaklı — geniş tatlı nokta',
+      'Profesyonel ekip tarafından test edildi',
+    ],
+    cons: ['Önceki nesil model', 'Stok sınırlı'],
+    specs: {
+      Ağırlık: '355g',
+      Denge: 'Orta (258mm)',
+      Uzunluk: '455mm',
+      Genişlik: '270mm',
+      Malzeme: 'Karbon Fiber + Foam',
+      Şekil: 'Yuvarlak',
+      Seviye: 'Orta',
+      Durum: 'Yenilenmiş – A Sınıfı',
+    },
+    affiliateUrl: 'https://www.amazon.com.tr/s?k=adidas+adipower+padel+yenilenmi%C5%9F',
   },
 ];
 
@@ -280,9 +463,18 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function getProductsByLevel(level: Product['level']): Product[] {
-  return products.filter((p) => p.level === level);
+  return products.filter((p) => p.level === level && !p.isRefurbished);
 }
 
 export function getFeaturedProducts(): Product[] {
-  return products.slice(0, 4);
+  return products.filter((p) => !p.isRefurbished).slice(0, 4);
 }
+
+export function getRefurbishedProducts(): Product[] {
+  return products.filter((p) => p.isRefurbished);
+}
+
+export function getRegularProducts(): Product[] {
+  return products.filter((p) => !p.isRefurbished);
+}
+

@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ProductCard from '@/components/ui/ProductCard';
 import FAQSection from '@/components/ui/FAQSection';
 import Breadcrumb from '@/components/seo/Breadcrumb';
 import JsonLd from '@/components/seo/JsonLd';
 import { breadcrumbSchema, faqSchema } from '@/lib/schemas';
-import { products } from '@/data/products';
+import { getRegularProducts } from '@/data/products';
+import ProductGrid from '@/components/products/ProductGrid';
 import { FAQ } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Padel Raketleri 2026 – Tüm Modeller, Fiyatlar ve İncelemeler',
   description:
-    'Türkiye\'nin en kapsamlı padel raket kataloğu. Wilson, Adidas, Nox, Head, Bullpadel ve Babolat – başlangıçtan profesyonele tüm seviyeler için raketler, uzman yorumları ve güncel fiyatlar.',
+    "Türkiye'nin en kapsamlı padel raket kataloğu. Wilson, Adidas, Nox, Head, Bullpadel ve Babolat – marka/fiyat/seviye filtreleri ile doğru raketi anında bulun.",
   alternates: {
     canonical: 'https://padelraketi.com/padel-raketleri',
   },
@@ -51,14 +51,14 @@ const faqs: FAQ[] = [
 ];
 
 export default function PadelRaketleriPage() {
-  const breadcrumbs = [
-    { name: 'Ana Sayfa', url: '/' },
-    { name: 'Padel Raketleri', url: '/padel-raketleri' },
-  ];
+  const regularProducts = getRegularProducts();
 
   return (
     <>
-      <JsonLd schema={breadcrumbSchema(breadcrumbs)} />
+      <JsonLd schema={breadcrumbSchema([
+        { name: 'Ana Sayfa', url: '/' },
+        { name: 'Padel Raketleri', url: '/padel-raketleri' },
+      ])} />
       <JsonLd schema={faqSchema(faqs)} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -70,13 +70,13 @@ export default function PadelRaketleriPage() {
         />
 
         {/* Page Header */}
-        <div className="mb-10">
+        <div className="mb-8">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-3">
             Padel Raketleri 2026
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl">
-            Türkiye&apos;nin en kapsamlı padel raket kataloğu. Wilson, Adidas, Nox, Head, Bullpadel ve
-            Babolat — uzman değerlendirmeleri ve gerçek kullanıcı yorumlarıyla doğru raket seçimini yapın.
+            Türkiye&apos;nin en kapsamlı padel raket kataloğu. Marka, seviye, fiyat ve oyun stiline
+            göre filtreleyin — doğru raketi hızla bulun.
           </p>
           <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
             <span>✍️ Ahmet Yılmaz – Sertifikalı Padel Antrenörü</span>
@@ -84,31 +84,11 @@ export default function PadelRaketleriPage() {
           </div>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {['Tümü', 'Başlangıç', 'Orta', 'İleri', 'Profesyonel'].map((filter) => (
-            <button
-              key={filter}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === 'Tümü'
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white border border-gray-200 text-gray-600 hover:border-green-500 hover:text-green-600'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {products.map((product, index) => (
-            <ProductCard key={product.id} product={product} rank={index + 1} />
-          ))}
-        </div>
+        {/* Marketplace Grid with Filters */}
+        <ProductGrid products={regularProducts} />
 
         {/* Long-form SEO Content */}
-        <div className="prose prose-lg prose-gray max-w-none mb-12">
+        <div className="prose prose-lg prose-gray max-w-none mb-12 mt-16">
           <h2>Padel Raketi Seçim Rehberi 2026</h2>
           <p>
             Doğru padel raketini seçmek, oyununuzu bir üst seviyeye taşıyabilir. Yüzlerce model
@@ -134,14 +114,6 @@ export default function PadelRaketleriPage() {
             kategorinin lider modelleridir.
           </p>
 
-          <h3>Raket Şekli ve Özellikleri</h3>
-          <p>
-            Padel raketleri üç ana şekil kategorisinde üretilir: <strong>yuvarlak</strong>,
-            <strong> damla</strong> ve <strong>elmas</strong>. Yuvarlak raketler kontrol ve afvedicilik
-            sunarken, elmas raketler güç ve spin kapasitesini maksimize eder. Damla şekilli raketler
-            ise bu ikisi arasında denge kurar.
-          </p>
-
           <h3>Malzeme Seçimi</h3>
           <p>
             Raket yüzeyi <strong>fiberglas</strong> veya <strong>karbon fiber</strong> olabilir.
@@ -156,59 +128,6 @@ export default function PadelRaketleriPage() {
             ölçülür: düşük denge (240-255mm) kontrol odaklı, orta denge (255-270mm) karma, yüksek
             denge (270mm+) ise güç odaklı oyun tarzına hitap eder.
           </p>
-
-          <h3>Popüler Markalar</h3>
-          <p>
-            Türkiye padel pazarında en çok tercih edilen markalar Wilson, Adidas, Nox, Head,
-            Bullpadel ve Babolat&apos;tır. Her markanın farklı teknoloji altyapısı ve ürün gamı
-            bulunmaktadır.
-          </p>
-        </div>
-
-        {/* Comparison Table */}
-        <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden mb-12">
-          <div className="p-6 border-b border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900">Tüm Raketler – Hızlı Karşılaştırma</h2>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Raket</th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Seviye</th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Şekil</th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Malzeme</th>
-                  <th className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Fiyat</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {products.map((product) => (
-                  <tr key={product.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4">
-                      <Link href={`/padel-raketleri/${product.slug}`} className="font-semibold text-gray-900 hover:text-green-600">
-                        {product.name}
-                      </Link>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                        product.level === 'Profesyonel' ? 'bg-purple-100 text-purple-700' :
-                        product.level === 'İleri' ? 'bg-orange-100 text-orange-700' :
-                        product.level === 'Orta' ? 'bg-blue-100 text-blue-700' :
-                        'bg-green-100 text-green-700'
-                      }`}>
-                        {product.level}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-600">{product.shape}</td>
-                    <td className="px-6 py-4 text-sm text-gray-600">{product.material}</td>
-                    <td className="px-6 py-4 text-right font-extrabold text-gray-900">
-                      {product.price.toLocaleString('tr-TR')} ₺
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
 
         <FAQSection faqs={faqs} title="Padel Raketleri Hakkında Sık Sorulan Sorular" />
@@ -223,9 +142,9 @@ export default function PadelRaketleriPage() {
             <h3 className="font-bold text-gray-900 group-hover:text-green-700">💰 Fiyat Karşılaştırması</h3>
             <p className="text-sm text-gray-500">En uygun fiyatı bulun</p>
           </Link>
-          <Link href="/padel-raket-karsilastirma" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
-            <h3 className="font-bold text-gray-900 group-hover:text-green-700">⚖️ Model Karşılaştırması</h3>
-            <p className="text-sm text-gray-500">Raketleri yan yana kıyaslayın</p>
+          <Link href="/yenilenmis-padel-raketleri" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
+            <h3 className="font-bold text-gray-900 group-hover:text-green-700">♻️ Yenilenmiş Raketler</h3>
+            <p className="text-sm text-gray-500">Uygun fiyatlı yenilenmiş seçenekler</p>
           </Link>
           <Link href="/baslangic-icin-padel-raketleri" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-green-500 transition-colors group">
             <h3 className="font-bold text-gray-900 group-hover:text-green-700">🌱 Başlangıç Raketleri</h3>

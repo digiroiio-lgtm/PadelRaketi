@@ -266,12 +266,13 @@ export default function HomePage() {
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Kategorilere Göz Atın</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[
               { label: 'Tüm Raketler', href: '/padel-raketleri', emoji: '🎾' },
               { label: 'En İyi Raketler', href: '/en-iyi-padel-raketleri', emoji: '🏆' },
               { label: 'Başlangıç İçin', href: '/baslangic-icin-padel-raketleri', emoji: '🌱' },
               { label: 'Fiyat Karşılaştır', href: '/padel-raket-fiyatlari', emoji: '💰' },
+              { label: 'Yenilenmiş Raketler', href: '/yenilenmis-padel-raketleri', emoji: '♻️' },
             ].map((cat) => (
               <Link
                 key={cat.href}

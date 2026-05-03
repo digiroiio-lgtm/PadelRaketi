@@ -21,6 +21,10 @@ export interface Product {
   specs: Record<string, string>;
   affiliateUrl: string;
   badge?: string;
+  playStyle?: 'Güç' | 'Kontrol' | 'Dengeli';
+  isRefurbished?: boolean;
+  isOnSale?: boolean;
+  isBestSeller?: boolean;
 }
 
 export interface Review {
