@@ -140,7 +140,6 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           {product.availability === 'InStock' ? 'Stokta — Hızlı kargo' : 'Stok tükendi'}
         </p>
 
-        {/* CTAs */}
         <div className="flex flex-col gap-2">
           <Link
             href={product.affiliateUrl}
@@ -154,7 +153,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             En Uygun Fiyat
           </Link>
           <Link
-            href={`/padel-raketleri/${product.slug}`}
+            href={product.isRefurbished ? `/yenilenmis-padel-raketleri/${product.slug}` : `/padel-raketleri/${product.slug}`}
             className="w-full flex items-center justify-center gap-1 border border-gray-200 hover:border-green-500 text-gray-700 hover:text-green-700 font-medium py-2 px-4 rounded-xl transition-colors text-xs"
           >
             Detaylı İncele

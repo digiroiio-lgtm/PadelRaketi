@@ -76,8 +76,8 @@ export default function ProductGrid({ products, title }: ProductGridProps) {
       case 'bestseller':
       default:
         result.sort((a, b) => {
-          const aScore = (a.isBestSeller ? 2 : 0) + (b.reviewCount - a.reviewCount) / 1000;
-          const bScore = (b.isBestSeller ? 2 : 0) + (a.reviewCount - b.reviewCount) / 1000;
+          const aScore = (a.isBestSeller ? 2 : 0) + a.reviewCount / 1000;
+          const bScore = (b.isBestSeller ? 2 : 0) + b.reviewCount / 1000;
           return bScore - aScore;
         });
         break;
