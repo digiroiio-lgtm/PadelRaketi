@@ -6,6 +6,12 @@ interface ProductCardProps {
   rank?: number;
 }
 
+function getProductDetailUrl(product: Product): string {
+  return product.isRefurbished
+    ? `/yenilenmis-padel-raketleri/${product.slug}`
+    : `/padel-raketleri/${product.slug}`;
+}
+
 const levelColors: Record<string, string> = {
   Başlangıç: 'bg-green-100 text-green-700',
   Orta: 'bg-blue-100 text-blue-700',
@@ -153,7 +159,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             En Uygun Fiyat
           </Link>
           <Link
-            href={product.isRefurbished ? `/yenilenmis-padel-raketleri/${product.slug}` : `/padel-raketleri/${product.slug}`}
+            href={getProductDetailUrl(product)}
             className="w-full flex items-center justify-center gap-1 border border-gray-200 hover:border-green-500 text-gray-700 hover:text-green-700 font-medium py-2 px-4 rounded-xl transition-colors text-xs"
           >
             Detaylı İncele

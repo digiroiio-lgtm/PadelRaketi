@@ -18,6 +18,11 @@ const SORT_OPTIONS: { value: FilterState['sort']; label: string }[] = [
   { value: 'newest', label: 'Yeni Eklenen' },
 ];
 
+/** Weight given to isBestSeller flag in sort score */
+const BESTSELLER_WEIGHT = 2;
+/** Normalizer to blend reviewCount into sort score without overwhelming isBestSeller */
+const REVIEW_COUNT_NORMALIZER = 1000;
+
 function buildDefaultFilters(products: Product[]): FilterState {
   const max = Math.max(...products.map((p) => p.price), 5000);
   return {
@@ -76,8 +81,8 @@ export default function ProductGrid({ products, title }: ProductGridProps) {
       case 'bestseller':
       default:
         result.sort((a, b) => {
-          const aScore = (a.isBestSeller ? 2 : 0) + a.reviewCount / 1000;
-          const bScore = (b.isBestSeller ? 2 : 0) + b.reviewCount / 1000;
+          const aScore = (a.isBestSeller ? BESTSELLER_WEIGHT : 0) + a.reviewCount / REVIEW_COUNT_NORMALIZER;
+          const bScore = (b.isBestSeller ? BESTSELLER_WEIGHT : 0) + b.reviewCount / REVIEW_COUNT_NORMALIZER;
           return bScore - aScore;
         });
         break;
